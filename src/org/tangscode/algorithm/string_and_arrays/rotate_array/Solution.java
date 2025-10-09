@@ -40,8 +40,10 @@ public class Solution {
         if (offset > 0) {
             for (int i = 0; i < new_nums.length; i++) {
                 if (i < offset) {
+                    // 前offset个元素 = 最后offset个元素
                     new_nums[i] = nums[nums.length - offset + i];
                 } else {
+                    // 剩余的元素 = 左移offset元素的值
                     new_nums[i] = nums[i - offset];
                 }
             }
@@ -79,7 +81,7 @@ public class Solution {
         Solution solution = new Solution();
         int[] nums = {1,2,3,4,5};
         System.out.println("修改前：" + Arrays.toString(nums));
-        solution.rotate3(nums, 3);
+        solution.rotate(nums, 3);
         System.out.println("修改后：" + Arrays.toString(nums));
     }
 
